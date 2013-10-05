@@ -9,7 +9,7 @@ FactoryGirl.define do
     sequence(:title) {|n| "Sample #{n}"}
     sequence(:description) {|n| "This is a description of Sample #{n}."}
     sequence(:page) {|n| "sample_#{n}.html"}
-    sequence(:problem_number)
+    sequence(:position)
   end
 
   factory :score do

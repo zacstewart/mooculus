@@ -1,5 +1,5 @@
 class Exercise < ActiveRecord::Base
-  attr_accessible :title, :description, :page, :problem_number
+  attr_accessible :title, :description, :page, :position
   has_many :scores, :dependent => :destroy
   has_many :problems, :dependent => :destroy
   has_many :competencies, :dependent => :destroy
