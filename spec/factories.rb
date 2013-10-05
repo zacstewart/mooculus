@@ -12,6 +12,11 @@ FactoryGirl.define do
     sequence(:position)
   end
 
+  factory :problem do
+    weight 10
+    sequence(:name) { |n| "Problem #{n}" }
+  end
+
   factory :score do
     sequence(:time_taken) {|n| 10+n}
     sequence(:attempt_number) {|n| 10+n}
