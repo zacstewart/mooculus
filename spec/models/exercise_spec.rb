@@ -10,11 +10,36 @@ describe Exercise do
     FactoryGirl.create(:problem, exercise: subject, weight: 3)
   ] }
 
-  its(:name) { should eq('some-exercise') }
-  its(:total_weight) { should eq(5) }
-  its(:problem_from_bag) { should be_in(problems) }
-  its(:next_exercise) { should eq(last_exercise) }
-  its(:previous_exercise) { should eq(first_exercise) }
+  describe '#name' do
+    it 'gets the name from the page' do
+      expect(subject.name).to eq('some-exercise')
+    end
+  end
+
+  describe '#total_weight' do
+    it "is the sum of it's problems' weights" do
+      expect(subject.total_weight).to eq(5)
+    end
+  end
+
+  describe '#problem_from_bag' do
+    it 'returns a random problem that belongs to the exercise' do
+      expect(subject.problem_from_bag).to be_in(problems)
+    end
+  end
+
+  describe '#next_exercise' do
+    it 'returns the next exercise by position' do
+      expect(subject.next_exercise).to eq(last_exercise)
+    end
+  end
+
+  describe '#previous_exercise' do
+    it 'returns the previous exercise by position' do
+      expect(subject.previous_exercise).to eq(first_exercise)
+    end
+  end
+
 
   describe '::first_by_position' do
     it 'retrieves the first exercise by position' do
