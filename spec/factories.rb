@@ -26,5 +26,12 @@ FactoryGirl.define do
     sequence(:seed) {|n| 10+n}
   end
 
+  factory :competency do
+    uncertainty 0.25
+    min_estimate 0.5
+    max_estimate 0.5
+    estimate 0.5
+  end
+
 end
 
