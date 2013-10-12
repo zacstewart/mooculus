@@ -34,6 +34,7 @@ end
 group :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'simplecov'
 end
 
 group :development, :test do
